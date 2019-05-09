@@ -262,12 +262,12 @@ class PubSubWriterReader
         }
         while(ret);
 
-        receiving_.store(true);
+        receiving_.exchange(true);
     }
 
     void stopReception()
     {
-        receiving_.store(false);
+        receiving_.exchange(false);
     }
 
     void block_for_all()
